@@ -1,0 +1,58 @@
+Transformer整体介绍
+1. 非常推荐！介绍了Transformer每个结构。更重要的是说明了各结构之间连接部分的实现，以及Decoder的预测过程。同时对没有那么复杂但很少人提到的部分都做了补充，包括最后线性层+Softmax层，Encoder-Decoder Attention，残差的计算，多头的综合计算等
+http://jalammar.github.io/illustrated-transformer/
+
+2. Self Attention第一篇文章的part 2，从整体角度介绍Encoder Decoder各部分和Transformer整体运行过程
+https://towardsdatascience.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-2-bf2403804ada 
+
+
+Self-attention & Multi-head Attention 自注意力机制和多头注意力
+1. 集中于对Self-Attention机制的介绍，从最基础的讲起，逐渐进入QKV的分析
+https://arjun-sarkar786.medium.com/all-you-need-to-know-about-attention-and-transformers-in-depth-understanding-part-1-552f0b41d021 
+
+
+Position Encoding 位置编码
+1. 位置编码发展过程分析
+https://zhuanlan.zhihu.com/p/166244505 
+
+2. 上面文章中用到的论文，文中提到并证明传统的Positional Encoding缺少前后方向性，并提出了在Self-Attention中将作差Position Encoding加入计算的解决方案
+https://arxiv.org/pdf/1911.04474.pdf 
+
+3. 位置编码举例和可视化
+https://machinelearningmastery.com/a-gentle-introduction-to-positional-encoding-in-transformer-models-part-1/#:~:text=Positional%20encoding%20is%20the%20scheme,Need%20by%20Vaswani%20et%20al. 
+
+4. 位置编码可视化代码https://github.com/jalammar/jalammar.github.io/blob/master/notebookes/transformer/transformer_positional_encoding_graph.ipynb
+
+
+残差
+1. 证明残差网络是设计让损失函数更平滑的论文
+https://arxiv.org/pdf/1712.09913.pdf
+
+2. 最初提出残差网络的论文，应用在图像识别中
+https://arxiv.org/pdf/1512.03385.pdf
+
+
+逐层标准化
+1. 提出逐层标准化的论文
+https://arxiv.org/pdf/1607.06450.pdf
+
+2. 研究并优化逐层标准化的论文
+https://papers.nips.cc/paper/2019/file/2f4fe03d77724a7217006e5d16728874-Paper.pdf
+
+
+前馈神经网络
+1. Mor Geva的论文两篇，她几乎是唯一尝试解释前馈神经网络具体意义的人，但是她的论文我对text prefix这个概念存疑
+https://aclanthology.org/2021.emnlp-main.446.pdf
+https://arxiv.org/pdf/2203.14680.pdf
+
+
+Mask
+1. 非常推荐！极少能直接说Mask是在训练中使用而非预测中使用的教学。并很详细地讲解了使用Mask的原因、Mask的原理和多头的计算。他的YouTube主页有Transformer其他部分的教学，应该质量也是不错的。
+https://www.youtube.com/@lennartsvensson7636/videos
+
+2. 额外介绍了Pad Mask，用来处理Encoder输入中句子长度不同的问题，有一个地方讲的不明确，其他的都还好。
+https://www.bilibili.com/video/BV1xY411E7gu/?spm_id_from=333.337.search-card.all.click&vd_source=03b00469db5a3d2f06d9a5ef4a522077
+
+3. 通过简单情况讲解mask的计算过程
+https://medium.com/analytics-vidhya/masking-in-transformers-self-attention-mechanism-bad3c9ec235c
+
